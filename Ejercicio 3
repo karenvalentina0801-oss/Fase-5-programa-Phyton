@@ -1,0 +1,13 @@
+print(f" Algoritmo Fibonacci Función recursiva")
+n= 0
+
+def Función_Fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1: 
+        return 1
+    else:
+        return Función_Fibonacci(n-1) + Función_Fibonacci(n-2)
+
+n= int(input("Ingrese un número:"))
+print("El valor de Fibonacci de", n, "es:", Función_Fibonacci(n))

@@ -1,0 +1,40 @@
+#PROBLEMA 4
+#Videoteca Digital
+videoteca = [
+    #   Título                   Año   Cal  Género
+    ["Oppenheimer",            2023, 9,   "Drama"],
+    ["Top Gun: Maverick",      2022, 8,   "Acción"],
+    ["Barbie",                 2023, 7,   "Comedia"],
+    ["Interstellar",           2014, 9,   "Sci-Fi"],
+    ["Avengers: Endgame",      2019, 8,   "Acción"],
+    ["The Batman",             2022, 7,   "Acción"],
+    ["Joker",                  2019, 8,   "Drama"],
+    ["Dune: Parte 1",          2021, 8,   "Sci-Fi"],
+    ["Inception",              2010, 9,   "Sci-Fi"],
+]
+
+COL_TITULO         = 0
+COL_AÑO            = 1
+COL_CALIFiCACIÓN   = 2
+COL_GÉNERO         = 3
+
+def contar_titulos(matriz, umbral, año_limite):
+    
+    contador = 0                          
+
+    for titulo in matriz:               
+        calificacion = titulo[COL_CALIFiCACIÓN]
+        año         = titulo[COL_AÑO]
+
+        if calificacion >= umbral and año >= año_limite:
+            contador += 1               
+
+    return contador                      
+ 
+if __name__ == "__main__":
+    umbral      = int(input("Calificación mínima (1-10): "))
+    año_limite = int(input("Año mínimo de lanzamiento : "))
+
+resultado = contar_titulos(videoteca, umbral, año_limite)
+ 
+print(f"Títulos que cumplen ambos criterios: {resultado}")
